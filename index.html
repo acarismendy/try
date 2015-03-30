@@ -41,7 +41,7 @@ var color = d3.scale.category20c();
 var treemap = d3.layout.treemap()
     .size([width, height])
     .sticky(true)
-    .value(function(d) { return d.size; console.log(d.size);});
+    .value(function(d) { return d.size; });
 
 var div = d3.select("body").append("div")
     .style("position", "relative")
@@ -70,6 +70,7 @@ d3.json("params.json", function(error, root) {
         .duration(1500)
         .call(position);
   });
+  console.log(root.size);
 });
 
 function position() {
