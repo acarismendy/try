@@ -41,7 +41,7 @@ var color = d3.scale.category20c();
 var treemap = d3.layout.treemap()
     .size([width, height])
     .sticky(true)
-    .value(function(d) { return d.size; console.log(d.size); });
+    .value(function(d) { return d.size;  });
 
 var div = d3.select("body").append("div")
     .style("position", "relative")
@@ -49,7 +49,7 @@ var div = d3.select("body").append("div")
     .style("height", (height + margin.top + margin.bottom) + "px")
     .style("left", margin.left + "px")
     .style("top", margin.top + "px");
-
+console.log(nest.size);
 d3.json("params.json", function(error, root) {
   var node = div.datum(root).selectAll(".node")
       .data(treemap.nodes)
