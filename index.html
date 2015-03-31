@@ -49,7 +49,7 @@ var div = d3.select("body").append("div")
     .style("height", (height + margin.top + margin.bottom) + "px")
     .style("left", margin.left + "px")
     .style("top", margin.top + "px");
-console.log(nest.size);
+
 d3.json("params.json", function(error, root) {
   var node = div.datum(root).selectAll(".node")
       .data(treemap.nodes)
@@ -59,6 +59,7 @@ d3.json("params.json", function(error, root) {
       .style("background", function(d) { return d.children ? color(d.name) : null; })
       .text(function(d) { return d.children ? null : d.name; });
       
+      console.log(root.size);
 
   d3.selectAll("input").on("change", function change() {
     var value = this.value === "count"
