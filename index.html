@@ -9,11 +9,11 @@ body {
   width: 960px;
 }
 
-form {
+/*form {
   position: absolute;
   right: 10px;
   top: 10px;
-}
+}*/
 
 .node {
   border: solid 1px white;
@@ -25,10 +25,10 @@ form {
 }
 
 </style>
-<form>
+<!--<form>
   <label><input type="radio" name="mode" value="size" checked> Size</label>
   <label><input type="radio" name="mode" value="count"> Count</label>
-</form>
+</form>-->
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -60,18 +60,18 @@ d3.json("params.json", function(error, root) {
       .text(function(d) { return d.children ? null : d.name; });
       console.log(node);
 
-  d3.selectAll("input").on("change", function change() {
-    var value = this.value === "count"
-        ? function() { return 1; }
-        : function(d) { return d.size; };
+  //d3.selectAll("input").on("change", function change() {
+  //  var value = this.value === "count"
+  //      ? function() { return 1; }
+  //      : function(d) { return d.size; };
 
-    node
-        .data(treemap.value(value).nodes)
-      .transition()
-        .duration(1500)
-        .call(position);
-  });
-  console.log(root.name);
+  //  node
+  //      .data(treemap.value(value).nodes)
+  //    .transition()
+  //      .duration(1500)
+  //      .call(position);
+  //});
+  
 });
 
 function position() {
