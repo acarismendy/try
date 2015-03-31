@@ -58,6 +58,7 @@ d3.json("params.json", function(error, root) {
       .call(position)
       .style("background", function(d) { return d.children ? color(d.name) : null; })
       .text(function(d) { return d.children ? null : d.name; });
+      console.log(node);
 
   d3.selectAll("input").on("change", function change() {
     var value = this.value === "count"
