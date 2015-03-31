@@ -41,7 +41,7 @@ var color = d3.scale.category20c();
 var treemap = d3.layout.treemap()
     .size([width, height])
     .sticky(true)
-    //.value(function(d) { return d.size; });
+    .value(function(d) { return d.size; });
 
 var div = d3.select("body").append("div")
     .style("position", "relative")
@@ -58,7 +58,7 @@ d3.json("params.json", function(error, root) {
       .call(position)
       .style("background", function(d) { return d.children ? color(d.name) : null; })
       .text(function(d) { return d.children ? null : d.name; });
-      console.log(node);
+      console.log(d.size);
 
   d3.selectAll("input").on("change", function change() {
     var value = this.value === "count"
