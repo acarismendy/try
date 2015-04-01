@@ -38,10 +38,10 @@ var margin = {top: 40, right: 10, bottom: 10, left: 10},
 
 var color = d3.scale.category20c();
 
-var treemap = d3.layout.treemap()
-    .size([width, height])
-    .sticky(true)
-    .value(function(d) { return d.size;  });
+//var treemap = d3.layout.treemap()
+//    .size([width, height])
+//    .sticky(true)
+//    .value(function(d) { return d.size;  });
 
 var div = d3.select("body").append("div")
     .style("position", "relative")
@@ -51,13 +51,13 @@ var div = d3.select("body").append("div")
     .style("top", margin.top + "px");
 
 d3.json("params.json", function(error, root) {
-  var node = div.datum(root).selectAll(".node")
-      .data(treemap.nodes)
-    .enter().append("div")
-      .attr("class", "node")
-      .call(position)
-      .style("background", function(d) { return d.children ? color(d.name) : null; })
-      .text(function(d) { return d.children ? null : d.name; });
+  //var node = div.datum(root).selectAll(".node")
+  //    .data(treemap.nodes)
+  //  .enter().append("div")
+  //    .attr("class", "node")
+  //    .call(position)
+  //    .style("background", function(d) { return d.children ? color(d.name) : null; })
+  //    .text(function(d) { return d.children ? null : d.name; });
       
       console.log(root);
 
