@@ -1,4 +1,7 @@
   {
+ "name": "flare",
+ "children": [
+   {
    "name": "analytics",
    "children": [
     {
@@ -372,5 +375,7 @@
     },
     {"name": "Visualization", "size": 16540}
    ]
+  }
+  ]
   }
  
